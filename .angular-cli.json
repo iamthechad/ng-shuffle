@@ -19,9 +19,14 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
-        "styles.css"
+        "../node_modules/bulma/css/bulma.css",
+        "styles.scss"
       ],
-      "scripts": [],
+      "scripts": [
+        "../node_modules/@fortawesome/fontawesome-free/js/fontawesome.js",
+        "../node_modules/@fortawesome/fontawesome-free/js/solid.js",
+        "../node_modules/@fortawesome/free-solid-svg-icons/index.js"
+      ],
       "environmentSource": "environments/environment.ts",
       "environments": {
         "dev": "environments/environment.ts",
@@ -54,7 +59,7 @@
     }
   },
   "defaults": {
-    "styleExt": "css",
+    "styleExt": "scss",
     "component": {}
   }
 }
