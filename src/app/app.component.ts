@@ -1,19 +1,9 @@
 import {Component, OnInit} from '@angular/core';
-import * as _ from 'lodash';
-import {animate, group, style, transition, trigger} from '@angular/animations';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
-  animations: [
-    trigger('itemAnim', [
-      transition('* => *', [
-        style({transform: '.5s'}),
-        animate('350ms')
-      ])
-    ])
-  ]
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
   private readonly ranks = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K'];
@@ -39,8 +29,8 @@ export class AppComponent implements OnInit {
     this.cards = [];
     this.shuffleCount = 0;
     let id = 0;
-    _.forEach(this.suits, suit => {
-      _.forEach(this.ranks, rank => {
+    this.suits.forEach(suit => {
+      this.ranks.forEach(rank => {
         this.cards.push({
           id: id++,
           rank,
@@ -65,13 +55,5 @@ export class AppComponent implements OnInit {
 
   shuffleSpeedName(type: string): string {
     return `shuffle${type}`;
-  }
-
-  cardIdentity(index, card: any): string {
-    return card.id;
-  }
-
-  randValue() {
-    return Math.floor(Math.random() * Math.floor(100));
   }
 }

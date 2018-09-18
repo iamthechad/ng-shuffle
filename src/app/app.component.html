@@ -22,8 +22,8 @@
       Shuffle <span class="fas-icon"><i class="fas fa-random"></i></span>
     </button>
   </div>
-  <div class="deck">
-    <div class="card" *ngFor="let card of cards; trackBy: cardIdentity" [ngClass]="suitColor[card.suit]" [@itemAnim]>
+  <div class="deck" [transition-group]="shuffleSpeed">
+    <div class="card" *ngFor="let card of cards" [ngClass]="suitColor[card.suit]" transitionGroupItem>
       <span class="card-suit card-suit-top">{{card.suit}}</span>
       <span class="card-number">{{card.rank}}</span>
       <span class="card-suit card-suit-bottom">{{card.suit}}</span>
