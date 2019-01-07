@@ -1,25 +1,25 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit} from "@angular/core";
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  selector: "app-root",
+  templateUrl: "./app.component.html",
+  styleUrls: ["./app.component.scss"]
 })
 export class AppComponent implements OnInit {
-  private readonly ranks = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K'];
-  private readonly suits = ['♥', '♦', '♠', '♣'];
+  private readonly ranks = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"];
+  private readonly suits = ["♥", "♦", "♠", "♣"];
 
   suitColor = {
-    '♠': 'black',
-    '♣': 'black',
-    '♦': 'red',
-    '♥': 'red'
+    "♠": "black",
+    "♣": "black",
+    "♦": "red",
+    "♥": "red"
   };
   cards = [];
   isDeckShuffled = false;
   shuffleCount = 0;
-  shuffleSpeed = 'shuffleMedium';
-  shuffleTypes = ['Slow', 'Medium', 'Fast'];
+  shuffleSpeed = "shuffleMedium";
+  shuffleTypes = ["Slow", "Medium", "Fast"];
 
   ngOnInit(): void {
     this.displayInitialDeck();

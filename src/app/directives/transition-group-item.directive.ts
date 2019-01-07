@@ -1,8 +1,8 @@
-import {Directive, ElementRef} from '@angular/core';
+import {Directive, ElementRef} from "@angular/core";
 
 @Directive({
   /* tslint:disable-next-line:directive-selector */
-  selector: '[transitionGroupItem]'
+  selector: "[transitionGroupItem]"
 })
 /**
  * Based on https://stackoverflow.com/a/49706664/217490
